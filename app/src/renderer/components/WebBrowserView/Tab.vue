@@ -1,0 +1,23 @@
+<template>
+  <div>
+    <div>
+      <slot></slot>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+    }
+  },
+  props: {
+    title: {required: true},
+    selected: {default: false}
+  }
+}
+</script>
+
+<style lang="css">
+</style>
