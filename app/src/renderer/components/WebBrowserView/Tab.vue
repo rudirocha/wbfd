@@ -1,8 +1,7 @@
 <template>
   <div>
-    <div>
+    <webview :src="link"></webview> 
       <slot></slot>
-    </div>
   </div>
 </template>
 
@@ -14,7 +13,13 @@ export default {
   },
   props: {
     title: {required: true},
-    selected: {default: false}
+    selected: {default: false},
+    link: {required: true}
+  },
+  methods: {
+    cenas () {
+      alert('cenas')
+    }
   }
 }
 </script>

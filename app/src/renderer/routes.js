@@ -8,9 +8,5 @@ export default [
     path: '/wb',
     name: 'web-browser-page',
     component: require('components/WebBrowserView')
-  },
-  {
-    path: '*',
-    redirect: '/'
   }
 ]
