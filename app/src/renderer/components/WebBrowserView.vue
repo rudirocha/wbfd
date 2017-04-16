@@ -2,7 +2,7 @@
   <div>
     <!-- Top nav bar init -->
     <tabs>
-      <tab title="Github" :selected="true" link="http://github.com">
+      <tab title="Github" link="http://github.com">
         <h1>Here the content</h1>
       </tab>
       <tab title="Google"  link="http://google.com">

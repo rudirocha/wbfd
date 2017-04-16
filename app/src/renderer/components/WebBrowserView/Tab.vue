@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <webview :src="link"></webview> 
+  <div v-show="isActive">
+    <webview :src="link" :style="{width: `${this.wbWidth}px`, height: `${this.wbHeight}px`}"></webview>
       <slot></slot>
   </div>
 </template>
@@ -9,6 +9,9 @@
 export default {
   data () {
     return {
+      isActive: this.selected,
+      wbWidth: screen.availWidth,
+      wbHeight: screen.availHeight
     }
   },
   props: {
@@ -16,10 +19,8 @@ export default {
     selected: {default: false},
     link: {required: true}
   },
-  methods: {
-    cenas () {
-      alert('cenas')
-    }
+  mounted () {
+    this.isActive = this.selected
   }
 }
 </script>
