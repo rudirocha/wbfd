@@ -7,3 +7,6 @@ export const decrementMain = ({ commit }) => {
 export const incrementMain = ({ commit }) => {
   commit(types.INCREMENT_MAIN_COUNTER)
 }
+export const addBrowserPage = ({commit}) => {
+  commit(types.ADD_BROWSER_PAGE)
+}

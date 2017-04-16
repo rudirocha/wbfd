@@ -1,12 +1,8 @@
 <template>
-  <div>
+  <div style="background-color:#ccc">
     <!-- Top nav bar init -->
     <tabs>
-      <tab title="Github" link="http://github.com">
-        <h1>Here the content</h1>
-      </tab>
-      <tab title="Google"  link="http://google.com">
-      </tab>
+      <tab v-for="tab in activeTabs" :title="tab.title" :link="tab.link"></tab>
     </tabs>
     <!-- Top nav bar end-->
   </div>
@@ -15,6 +11,7 @@
 <script>
 import Tabs from './WebBrowserView/Tabs'
 import Tab from './WebBrowserView/Tab'
+import AppStore from '../vuex/store'
 
 export default {
   components: {
@@ -25,11 +22,14 @@ export default {
   },
   data () {
     return {
+      browserTabs: AppStore.state.browser.pages
     }
   },
   methods: {
-    cenas () {
-      alert('cenas')
+  },
+  computed: {
+    activeTabs () {
+      return this.browserTabs
     }
   }
 }

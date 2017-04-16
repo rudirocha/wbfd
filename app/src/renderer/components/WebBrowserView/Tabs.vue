@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div class="tabs is-centered">
-      <ul>
-        <li v-for="tab in tabs" :class="{'is-active' : tab.isActive}">
-          <a @click="selectTab(tab)">{{ tab.title }}</a>
-        </li>
-      </ul>
-    </div>
+    <nav class="nav">
+      <div class="nav-left">
+        <div v-for="tab in tabs" class="nav-item">
+          <a @click="selectTab(tab)" :class="{'is-active' : tab.isActive}">{{ tab.title }}</a>
+        </div>
+      </div>
+    </nav>
     <div class="tabs-stage">
       <slot></slot>
     </div>
